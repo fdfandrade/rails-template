@@ -1,15 +1,22 @@
 RAILS_REQUIREMENT = "~> 5.0.1"
 
 def apply_template!
+  start_message
   assert_minimum_rails_version
   #assert_valid_options
   #assert_postgresql
   add_template_repository_to_source_path
 
-  template "Gemfile.tt", :force => true
+  template "Gemfile.tt",   :force => true
+  template "README.md.tt", :force => true
 
-  gem ruboco if yes?("Add support to rubocop?")
-  # no?(question) acts just the opposite.
+  rails_command "generate controller home index"
+
+  template "config/routes.rb.tt", :force => true
+end
+
+def start_message
+  puts '       #  Start configuring your application -> ' + app_name
 end
 
 #
