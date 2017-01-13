@@ -9,10 +9,24 @@ def apply_template!
 
   template "Gemfile.tt",   :force => true
   template "README.md.tt", :force => true
-
-  rails_command "generate controller home index"
+  
+  rails_command "g controller home index"
+  #rails_command "g devise:install"
+  #rails_command "g devise user"
+  #rails_command "g devise:views"
 
   template "config/routes.rb.tt", :force => true
+
+  #directory "app/assets/javascripts", "app/assets/javascripts", :force => true
+  #directory "app/assets/stylesheets", "app/assets/stylesheets", :force => true
+  #
+  #directory "app/helpers",            "app/helpers",            :force => true
+  #
+  #directory "app/views/home",         "app/views/home",         :force => true
+  #directory "app/views/layouts",      "app/views/layouts",      :force => true
+
+  # add first language, remember to copy helper and application controller
+  # rake gettext:add_language LANGUAGE=en
 end
 
 def start_message
