@@ -1,109 +1,141 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 /* universal */
-
 body {
-  padding-top: 60px;
+    padding-top: 60px;
+    /* header */
 }
 
 section {
-  overflow: auto;
+    overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .center h1 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
-
 /* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
-  text-align: center;
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+    font-size: 1.1em;
+    line-height: 1.7em;
 }
-
 /* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
 /* footer */
-
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+    border-top: 1px solid #eaeaea;
+    padding-top: 10px;
+    margin-top: 45px;
+    color: #777;
 }
 
 footer a {
-  color: #555;
+    color: #555;
 }
 
 footer a:hover {
-  color: #222;
+    color: #222;
 }
 
 footer small {
-  float: left;
+    float: left;
 }
 
 footer ul {
-  float: right;
-  list-style: none;
+    float: right;
+    list-style: none;
 }
 
 footer ul li {
-  float: left;
-  margin-left: 15px;
+    float: left;
+    margin-left: 15px;
 }
-
 /* override styles */
 .alert-alert {
-  @extend .alert-warning;
+    @extend .alert-warning;
 }
 
 .alert-notice {
-  @extend .alert-info;
+    @extend .alert-info;
+}
+
+/* Authentication */
+.sign {
+  margin-top: 50px;
+}
+
+.sign .panel-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 520px) {
+  .sign {
+      margin-top: 10px;
+    }
+}
+
+/* Improve bootstrap css */
+.no-vpadding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-hpadding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-vmargin {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.no-hmargin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+/* Forms */
+form input.checkbox {
+  margin-left: 0 !important;
 }

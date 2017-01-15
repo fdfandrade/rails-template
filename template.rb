@@ -10,27 +10,33 @@ def apply_template!
   template "Gemfile.tt",   :force => true
   template "README.md.tt", :force => true
   
-  rails_command "g controller home index"
-  #rails_command "g devise:install"
-  #rails_command "g devise user"
-  #rails_command "g devise:views"
+  rails_command "g devise:install"
+  rails_command "g devise user -e"
 
-  template "config/routes.rb.tt", :force => true
+  rails_command "db:migrate"
 
-  #directory "app/assets/javascripts", "app/assets/javascripts", :force => true
-  #directory "app/assets/stylesheets", "app/assets/stylesheets", :force => true
-  #
-  #directory "app/helpers",            "app/helpers",            :force => true
-  #
-  #directory "app/views/home",         "app/views/home",         :force => true
-  #directory "app/views/layouts",      "app/views/layouts",      :force => true
+  rails_command "g devise:views user -e"
+  rails_command "g controller home index -e"
 
   # add first language, remember to copy helper and application controller
-  # rake gettext:add_language LANGUAGE=en
+  rails_command "gettext:add_language LANGUAGE=en"
+
+  directory "config", "config", :force => true
+
+  directory "app/assets/javascripts", "app/assets/javascripts", :force => true
+  directory "app/assets/stylesheets", "app/assets/stylesheets", :force => true
+  
+  directory "app/controllers", "app/controllers", :force => true
+  
+  directory "app/helpers", "app/helpers", :force => true
+  
+  directory "app/views", "app/views", :force => true
 end
 
 def start_message
-  puts '       #  Start configuring your application -> ' + app_name
+  puts '================================================================'
+  puts '=  Start configuring your application -> ' + app_name
+  puts '================================================================'
 end
 
 #
