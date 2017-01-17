@@ -51,7 +51,27 @@ p {
     font-size: 1.1em;
     line-height: 1.7em;
 }
+
+/* debug */
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 /* header */
+
+
 /* footer */
 footer {
     border-top: 1px solid #eaeaea;
@@ -138,4 +158,8 @@ footer ul li {
 /* Forms */
 form input.checkbox {
   margin-left: 0 !important;
+}
+
+.field_with_errors > input {
+  border-color: salmon;
 }

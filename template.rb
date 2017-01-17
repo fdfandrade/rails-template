@@ -9,7 +9,9 @@ def apply_template!
 
   template "Gemfile.tt",   :force => true
   template "README.md.tt", :force => true
-  
+
+  rails_command 'db:setup'
+
   rails_command "g devise:install"
   rails_command "g devise user -e"
 
@@ -31,6 +33,16 @@ def apply_template!
   directory "app/helpers", "app/helpers", :force => true
   
   directory "app/views", "app/views", :force => true
+
+  # create the git repo and the first commit
+
+  # create heroku app
+
+  # run db:setup
+
+  # run db:migrate
+
+  # ...
 end
 
 def start_message
